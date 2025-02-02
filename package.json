@@ -1,0 +1,17 @@
+{
+  "name": "linkndcsv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch main.js --input=leads.csv --output=clean.csv --errors=errors.csv"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "papaparse": "^5.5.2",
+    "yargs": "^17.7.2"
+  }
+}
