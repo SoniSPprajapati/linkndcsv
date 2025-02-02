@@ -1,11 +1,14 @@
 {
-  "name": "remotecsv",
-  "version": "1.0.0",
+  "name": "linkndcsv",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "linkndcsv": "./main.js"
+  },
   "scripts": {
-    "start": "node --env-file=.env --watch main.js --input=leads.csv --output=clean.csv --errors=errors.csv",
+    "start": "node --watch main.js --input=leads.csv --output=clean.csv --errors=errors.csv",
     "test": "vitest"
   },
   "keywords": [],

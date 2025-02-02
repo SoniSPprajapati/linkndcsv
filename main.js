@@ -1,10 +1,20 @@
+#!/usr/bin/env node
+import { readCSV, writeCSV } from "./lib/io.js";
+import core from "./lib/core.js";
+
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
 const argv = yargs(hideBin(process.argv)).argv;
 
-import { readCSV, writeCSV } from "./lib/io.js";
+function main() {
+  const csvData = readCSV(argv.input);
 
-const leads = readCSV(argv.input);
-console.log(leads.body);
+  const [clean, errors] = core(csvData.body);
 
-writeCSV("test.csv", leads.body);
+  // Generate clean file
+  writeCSV(argv.output, clean);
+  // Generate errors file
+  writeCSV(argv.errors, errors);
+}
+
+main();
