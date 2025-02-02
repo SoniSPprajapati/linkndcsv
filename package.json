@@ -1,17 +1,22 @@
 {
-  "name": "linkndcsv",
+  "name": "remotecsv",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --watch main.js --input=leads.csv --output=clean.csv --errors=errors.csv"
+    "start": "node --env-file=.env --watch main.js --input=leads.csv --output=clean.csv --errors=errors.csv",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "papaparse": "^5.5.2",
+    "validator": "^13.12.0",
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.4"
   }
 }
